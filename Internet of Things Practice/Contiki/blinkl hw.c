@@ -1,14 +1,4 @@
 //cooperate with serialtest
-/**
- * \file
- *         Blink example application,
- *          Demonstrates starting another process from one, setting timers, using LEDs.
- *          expected result from running it:
- *          red LED flashing fast (toggling every 125 ms), green every second.
- * \author
- *         Marcus Linderoth <linderoth.marcus@gmail.com>
- */
-
 #include <stdio.h>
 #include "contiki.h"
 #include "dev/leds.h"
@@ -47,18 +37,6 @@ PROCESS_THREAD(blink_process, ev, data)
   process_start(&red_process, NULL);
 
   while(1) {
-    /* unnecessary, messy but wanted sth else than what the red process
-     * is doing so instead of just toggling, turn on when even seconds and
-     * turn off on uneven seconds.
-     */
-    /*if(clock_seconds() & 1) {
-      leds_on(LEDS_GREEN);
-    } else {
-      leds_off(LEDS_GREEN);
-    }
-    etimer_set(&et, CLOCK_SECOND/2);
-    PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));*/
-
 	printf("led off ->");
 	etimer_set(&et,CLOCK_SECOND);
 	PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
@@ -77,5 +55,3 @@ PROCESS_THREAD(blink_process, ev, data)
   }
   PROCESS_END();
 }
-/*---------------------------------------------------------------------------*/
-
