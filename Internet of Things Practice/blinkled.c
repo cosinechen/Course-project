@@ -90,16 +90,18 @@ PROCESS_THREAD(blink_process, ev, data)
 	printf("led off ->");
 	etimer_set(&et,CLOCK_SECOND);
 	PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
+
 	printf("red led ->");
 	etimer_set(&et,CLOCK_SECOND);
 	PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
+
 	printf("green led->");
 	etimer_set(&et,CLOCK_SECOND);
 	PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
+
 	printf("led all ->");
 	etimer_set(&et,CLOCK_SECOND*2);
 	PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
-
   }
   PROCESS_END();
 }
