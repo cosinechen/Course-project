@@ -41,8 +41,8 @@ PROCESS_THREAD(button_process, ev, data)
       process_exit(&blink_process);
     }
     if(btnpresses == 5) {
-	process_start(&blink_process,NULL);
-	btnpresses = 0;
+      process_start(&blink_process,NULL);
+      btnpresses = 0;
     }
   }
   PROCESS_END();
