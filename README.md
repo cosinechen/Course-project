@@ -1,3 +1,3 @@
 # Course-project
 
-Record some codes.
+Record some codes of university courses.
